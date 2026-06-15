@@ -5,11 +5,14 @@ import { useAssessment } from "@/lib/context";
 import { computeScores } from "@/lib/scoring";
 import { getTopGaps } from "@/lib/gap-analyzer";
 import { exportJSON, importJSON, resetState } from "@/lib/storage";
+import dynamic from "next/dynamic";
 import { ThemeSidebar } from "@/components/ThemeSidebar";
 import { Stage1Banner } from "@/components/Stage1Banner";
-import { ThemeRadarChart } from "@/components/ThemeRadarChart";
-import { StatusDistributionChart, OverallDonutChart } from "@/components/StatusDistributionChart";
 import { GapList } from "@/components/GapList";
+
+const ThemeRadarChart = dynamic(() => import("@/components/ThemeRadarChart").then(m => m.ThemeRadarChart), { ssr: false, loading: () => <div className="h-[280px] animate-pulse bg-muted rounded" /> });
+const StatusDistributionChart = dynamic(() => import("@/components/StatusDistributionChart").then(m => m.StatusDistributionChart), { ssr: false, loading: () => <div className="h-[240px] animate-pulse bg-muted rounded" /> });
+const OverallDonutChart = dynamic(() => import("@/components/StatusDistributionChart").then(m => m.OverallDonutChart), { ssr: false, loading: () => <div className="h-[200px] animate-pulse bg-muted rounded" /> });
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";

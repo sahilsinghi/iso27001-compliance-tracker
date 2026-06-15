@@ -16,10 +16,28 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ISO 27001 Self-Check — Annex A Compliance Tracker",
   description: "Track your ISO 27001:2022 compliance posture across all 93 Annex A controls. Privacy-first, no server-side data.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
   openGraph: {
     title: "ISO 27001 Self-Check",
     description: "ISO 27001:2022 Annex A compliance tracker — 93 controls, evidence management, Stage-1 audit readiness.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "ISO 27001 Self-Check — 93 Annex A Controls Tracker",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ISO 27001 Self-Check",
+    description: "ISO 27001:2022 Annex A compliance tracker — 93 controls, evidence management, Stage-1 audit readiness.",
+    images: ["/og-image.svg"],
   },
 };
 
